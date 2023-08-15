@@ -1,0 +1,33 @@
+//ex1
+function convert(input) {
+    return input.replace(/[aeiou]/gi, 'b');
+  }
+  
+  console.log(convert('mumbai'));
+  
+  //ex2
+ function isPangram(input) {
+    let letters = new Set();
+    for (let char of input.toLowerCase()) {
+      if (char >= 'a' && char <= 'z') {
+        letters.add(char);
+      }
+    }
+    return letters.size === 26;
+  }
+  
+  console.log(isPangram('aaaabbbcdefghijklmnopqrstuvwxyzzzz'));
+
+  //ex3
+
+  function countUniqueConsonants(input) {
+  const vowels = new Set(['a', 'e', 'i', 'o', 'u']);
+  const consonants = new Set();
+  for (let char of input.toLowerCase()) {
+    if (!vowels.has(char) && !consonants.has(char)) {
+      consonants.add(char);
+    }
+  }
+  return consonants.size;
+}
+console.log(countUniqueConsonants('kolkata'));
